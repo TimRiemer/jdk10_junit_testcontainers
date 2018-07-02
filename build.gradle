@@ -1,0 +1,28 @@
+group 'mobi.riemer'
+version '1.0-SNAPSHOT'
+
+ext.junitPlatformVersion = '1.1.0'
+ext.junitJupiterVersion  = '5.2.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.10
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testCompile ("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testCompile ("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
+    testCompile ("org.junit.vintage:junit-vintage-engine:${junitJupiterVersion}")
+
+    testCompile 'org.testcontainers:testcontainers:1.8.0'
+    testCompile 'org.testcontainers:selenium:1.8.0'
+
+    testCompile 'org.seleniumhq.selenium:selenium-remote-driver:2.52.0'
+}
