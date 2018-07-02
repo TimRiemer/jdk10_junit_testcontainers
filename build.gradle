@@ -22,7 +22,12 @@ dependencies {
     testCompile ("org.junit.vintage:junit-vintage-engine:${junitJupiterVersion}")
 
     testCompile 'org.testcontainers:testcontainers:1.8.0'
-    testCompile 'org.testcontainers:selenium:1.8.0'
 
+    testCompile 'org.testcontainers:selenium:1.8.0'
     testCompile 'org.seleniumhq.selenium:selenium-remote-driver:2.52.0'
+
+    testCompile 'org.testcontainers:postgresql:1.8.0'
+    testCompile 'org.postgresql:postgresql:42.2.2'
+    testCompile 'com.zaxxer:HikariCP:3.2.0'
+
 }
