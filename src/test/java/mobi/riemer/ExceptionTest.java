@@ -18,6 +18,6 @@ class ExceptionTest {
         var exception = assertThrows(UnsupportedOperationException.class, () -> {
             throw new UnsupportedOperationException("Operation not supported");
         });
-        assertEquals(exception.getMessage(), "Operation not supported");
+        assertEquals("Operation not supported", exception.getMessage());
     }
 }
