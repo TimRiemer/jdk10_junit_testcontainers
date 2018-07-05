@@ -5,17 +5,13 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testcontainers.containers.BrowserWebDriverContainer;
-import org.testcontainers.containers.DefaultRecordingFileFactory;
-import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.containers.VncRecordingContainer;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL;
 
-public class WebdriverContainerTest {
+public class JUnit4WebdriverContainerTest {
 
     @Rule
     public BrowserWebDriverContainer chrome = new BrowserWebDriverContainer()

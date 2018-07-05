@@ -1,8 +1,9 @@
 package mobi.riemer;
 
+
 import org.junit.*;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class JUnit4Test {
 

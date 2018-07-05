@@ -1,5 +1,6 @@
 package mobi.riemer;
 
+
 import org.junit.jupiter.api.*;
 
 import java.util.stream.Stream;
@@ -48,6 +49,14 @@ class AssertionTest {
     void testAssertTimeout() {
         assertTimeout(ofSeconds(10),
                 () -> { Thread.sleep(9000); });
+    }
+
+    @Test
+    void testAssertTimeoutPreemptively() {
+        assertTimeoutPreemptively(ofSeconds(10),
+                () -> {
+                    Thread.sleep(9000);
+                });
     }
 
     @Test
