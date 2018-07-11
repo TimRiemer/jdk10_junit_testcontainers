@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ParameterizedTests {
+class ParameterizedTests {
 
 
     @ParameterizedTest

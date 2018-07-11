@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.images.builder.ImageFromDockerfile;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,6 +24,6 @@ class DockerDSLContainer {
                         }))
                 .withExposedPorts(80);
 
-        assertEquals(Arrays.asList(80), container.getExposedPorts());
+        assertEquals(Collections.singletonList(80), container.getExposedPorts());
     }
 }

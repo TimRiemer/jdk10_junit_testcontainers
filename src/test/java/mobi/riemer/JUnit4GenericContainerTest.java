@@ -7,8 +7,6 @@ import org.testcontainers.containers.GenericContainer;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
-
 public class JUnit4GenericContainerTest {
 
     @ClassRule

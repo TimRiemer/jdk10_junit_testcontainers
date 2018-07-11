@@ -15,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WebDriverContainerTest {
 
-    BrowserWebDriverContainer chrome = new BrowserWebDriverContainer<>()
+    private BrowserWebDriverContainer chrome = new BrowserWebDriverContainer<>()
             .withDesiredCapabilities(DesiredCapabilities.chrome())
             .withNetwork(Network.SHARED)
             .withNetworkAliases("vnchost")
             .withRecordingMode(BrowserWebDriverContainer.VncRecordingMode.SKIP, null);
 
 
-    VncRecordingContainer vnc = new VncRecordingContainer(chrome);
+    private VncRecordingContainer vnc = new VncRecordingContainer(chrome);
 
     @BeforeEach
     void tearUp() {

@@ -29,6 +29,6 @@ public class JUnit4Test {
 
     @Test
     public void simpleTest() {
-        assertEquals(2, 1+1);
+        assertEquals(2, 1 + 1);
     }
 }

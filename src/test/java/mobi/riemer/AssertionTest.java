@@ -37,18 +37,20 @@ class AssertionTest {
 
     @Test
     void simpleTest() {
-        assertEquals(2, 1+1);
+        assertEquals(2, 1 + 1);
     }
 
     @Test
     void simpleTest2() {
-        assertNotEquals(5, 2+2, () -> "Result should be 5");
+        assertNotEquals(5, 2 + 2, () -> "Result should be 5");
     }
 
     @Test
     void testAssertTimeout() {
         assertTimeout(ofSeconds(10),
-                () -> { Thread.sleep(9000); });
+                () -> {
+                    Thread.sleep(9000);
+                });
     }
 
     @Test
@@ -62,21 +64,21 @@ class AssertionTest {
     @Test
     void shouldAssertAllAssertions() {
         assertAll(
-                () -> assertEquals(2, 1+1),
-                () -> assertEquals(4, 2+2)
+                () -> assertEquals(2, 1 + 1),
+                () -> assertEquals(4, 2 + 2)
         );
     }
 
     @Test
     @DisplayName("Should validate that the sum of 2 + 2 equals 4")
     void shouldCheckSumOfCalculation() {
-        assertEquals(4, 2+2);
+        assertEquals(4, 2 + 2);
     }
 
     // JUnit 4 @Ignore
     @Disabled
     void shouldCheckSum() {
-        assertEquals(4, 2+2);
+        assertEquals(4, 2 + 2);
     }
 
     @Nested
@@ -94,6 +96,8 @@ class AssertionTest {
     Stream<DynamicTest> dynamicTestsFromStream() {
         return Stream.of(1, 2, 3)
                 .map(i -> dynamicTest("test " + i,
-                        () -> { assertEquals(i*2, i + i); }));
+                        () -> {
+                            assertEquals(i * 2, i + i);
+                        }));
     }
 }
