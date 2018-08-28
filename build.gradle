@@ -2,7 +2,8 @@ group 'mobi.riemer'
 version '1.0-SNAPSHOT'
 
 ext.junitPlatformVersion = '1.1.0'
-ext.junitJupiterVersion  = '5.2.0'
+ext.junitJupiterVersion  = '5.3.0-RC1'
+ext.testcontainersVersion  = '1.8.3'
 
 apply plugin: 'java'
 
@@ -21,13 +22,18 @@ dependencies {
     testCompile ("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
     testCompile ("org.junit.vintage:junit-vintage-engine:${junitJupiterVersion}")
 
-    testCompile 'org.testcontainers:testcontainers:1.8.0'
+    testCompile ("org.testcontainers:testcontainers:${testcontainersVersion}")
 
-    testCompile 'org.testcontainers:selenium:1.8.0'
+    testCompile ("org.testcontainers:selenium:${testcontainersVersion}")
     testCompile 'org.seleniumhq.selenium:selenium-remote-driver:2.52.0'
 
-    testCompile 'org.testcontainers:postgresql:1.8.0'
+    testCompile ("org.testcontainers:postgresql:${testcontainersVersion}")
     testCompile 'org.postgresql:postgresql:42.2.2'
     testCompile 'com.zaxxer:HikariCP:3.2.0'
-
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.10'
+}
+
+

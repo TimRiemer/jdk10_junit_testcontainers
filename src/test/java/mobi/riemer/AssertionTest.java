@@ -85,6 +85,11 @@ class AssertionTest {
     @DisplayName("Inner Class")
     class InnerClass {
 
+        @BeforeEach
+        void beforeEach() {
+            System.out.println("beforeEach innerClass!");
+        }
+
         @Test
         @DisplayName("Inner Test")
         void innerClassTest() {
@@ -96,8 +101,6 @@ class AssertionTest {
     Stream<DynamicTest> dynamicTestsFromStream() {
         return Stream.of(1, 2, 3)
                 .map(i -> dynamicTest("test " + i,
-                        () -> {
-                            assertEquals(i * 2, i + i);
-                        }));
+                        () -> assertEquals(i * 2, i + i)));
     }
 }
