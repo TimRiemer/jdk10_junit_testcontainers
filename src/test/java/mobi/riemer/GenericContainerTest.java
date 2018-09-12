@@ -25,7 +25,6 @@ class GenericContainerTest {
     }
 
     @Test
-    @DisplayName("\uD83D\uDE3B")
     void getExposedPorts() {
         var ports = wildfly.getExposedPorts();
         var expectedPorts = Arrays.asList(8080, 9990);
