@@ -1,8 +1,7 @@
 group 'mobi.riemer'
 version '1.0-SNAPSHOT'
 
-ext.junitPlatformVersion = '1.1.0'
-ext.junitJupiterVersion  = '5.3.0-RC1'
+ext.junitJupiterVersion  = '5.3.1'
 ext.testcontainersVersion  = '1.8.3'
 
 apply plugin: 'java'
@@ -14,7 +13,11 @@ repositories {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        excludeTags 'testcontainers'
+        // includeTags 'testcontainers'
+        excludeEngines 'junit-vintage'
+    }
 }
 
 dependencies {

@@ -2,6 +2,7 @@ package mobi.riemer;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,6 +14,7 @@ import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("testcontainers")
 class WebDriverContainerTest {
 
     private BrowserWebDriverContainer chrome = new BrowserWebDriverContainer<>()

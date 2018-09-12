@@ -2,6 +2,8 @@ package mobi.riemer;
 
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 import java.util.stream.Stream;
 
@@ -75,9 +77,21 @@ class AssertionTest {
         assertEquals(4, 2 + 2);
     }
 
+    @Test
+    @DisplayName("\uD83D\uDE3B\uD83D\uDE3B\uD83D\uDE3B")
+    void testWithEmojisInDisplayName() {
+        assertEquals(4, 2 + 2);
+    }
+
     // JUnit 4 @Ignore
     @Disabled
     void shouldCheckSum() {
+        assertEquals(4, 2 + 2);
+    }
+
+    @EnabledOnOs({OS.MAC, OS.LINUX})
+    @Test
+    void shouldCheckSumOnlyOnMacAndLinux() {
         assertEquals(4, 2 + 2);
     }
 
