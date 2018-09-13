@@ -34,7 +34,7 @@ class WebDriverContainerTest {
 
     @AfterEach
     void tearDown() {
-        vnc.saveRecordingToFile(new File("build/", "Test.flv"));
+
         vnc.stop();
         chrome.stop();
     }
@@ -42,10 +42,13 @@ class WebDriverContainerTest {
     @Test
     void searchForTestcontainersOnGoogle() {
         var driver = chrome.getWebDriver();
+        var name = "testcontainers";
 
         driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys("testcontainers");
+        driver.findElement(By.name("q")).sendKeys(name);
         driver.findElement(By.name("q")).submit();
-        assertEquals("testcontainers", driver.findElement(By.name("q")).getAttribute("value"));
+        assertEquals(name, driver.findElement(By.name("q")).getAttribute("value"));
+
+        vnc.saveRecordingToFile(new File("build/", name + ".flv"));
     }
 }

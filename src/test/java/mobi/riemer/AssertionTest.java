@@ -85,6 +85,7 @@ class AssertionTest {
 
     // JUnit 4 @Ignore
     @Disabled
+    @Test
     void shouldCheckSum() {
         assertEquals(4, 2 + 2);
     }
