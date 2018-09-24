@@ -13,6 +13,10 @@ repositories {
 }
 
 test {
+    // systemProperties['junit.jupiter.execution.parallel.enabled'] = true
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    forkEvery = 1
+    
     useJUnitPlatform {
         excludeTags 'testcontainers'
         // includeTags 'testcontainers'
