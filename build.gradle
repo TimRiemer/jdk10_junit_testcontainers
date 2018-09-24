@@ -2,7 +2,7 @@ group 'mobi.riemer'
 version '1.0-SNAPSHOT'
 
 ext.junitJupiterVersion  = '5.3.1'
-ext.testcontainersVersion  = '1.8.3'
+ext.testcontainersVersion  = '1.9.0'
 
 apply plugin: 'java'
 
@@ -28,10 +28,10 @@ dependencies {
     testCompile ("org.testcontainers:testcontainers:${testcontainersVersion}")
 
     testCompile ("org.testcontainers:selenium:${testcontainersVersion}")
-    testCompile 'org.seleniumhq.selenium:selenium-remote-driver:2.52.0'
+    testCompile 'org.seleniumhq.selenium:selenium-remote-driver:3.14.0'
 
     testCompile ("org.testcontainers:postgresql:${testcontainersVersion}")
-    testCompile 'org.postgresql:postgresql:42.2.2'
+    testCompile 'org.postgresql:postgresql:42.2.5.jre7'
     testCompile 'com.zaxxer:HikariCP:3.2.0'
 }
 
