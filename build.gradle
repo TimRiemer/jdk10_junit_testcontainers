@@ -2,7 +2,7 @@ group 'mobi.riemer'
 version '1.0-SNAPSHOT'
 
 ext.junitJupiterVersion  = '5.3.1'
-ext.testcontainersVersion  = '1.9.0'
+ext.testcontainersVersion  = '1.9.1'
 
 apply plugin: 'java'
 
