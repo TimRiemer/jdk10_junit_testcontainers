@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testcontainers.containers.BrowserWebDriverContainer;
@@ -15,29 +16,17 @@ import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tag("testcontainers")
+@ExtendWith(TestcontainersExtension.class)
 class WebDriverContainerTest {
 
-    private BrowserWebDriverContainer chrome = new BrowserWebDriverContainer<>()
+    private static BrowserWebDriverContainer chrome = new BrowserWebDriverContainer<>()
             .withDesiredCapabilities(DesiredCapabilities.chrome())
             .withNetwork(Network.SHARED)
             .withNetworkAliases("vnchost")
             .withRecordingMode(BrowserWebDriverContainer.VncRecordingMode.SKIP, null);
 
 
-    private VncRecordingContainer vnc = new VncRecordingContainer(chrome);
-
-    @BeforeEach
-    void tearUp() {
-        chrome.start();
-        vnc.start();
-    }
-
-    @AfterEach
-    void tearDown() {
-
-        vnc.stop();
-        chrome.stop();
-    }
+    private static VncRecordingContainer vnc = new VncRecordingContainer(chrome);
 
     @Test
     void searchForTestcontainersOnGoogle() {

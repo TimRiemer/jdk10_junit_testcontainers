@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 import java.sql.ResultSet;
@@ -15,19 +16,10 @@ import java.sql.Statement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tag("testcontainers")
+@ExtendWith(TestcontainersExtension.class)
 class PostgreSQLContainerTest {
 
     private static PostgreSQLContainer postgres = new PostgreSQLContainer();
-
-    @BeforeAll
-    static void startUp() {
-        postgres.start();
-    }
-
-    @AfterAll
-    static void tearDown() {
-        postgres.stop();
-    }
 
     @Test
     void testSimpleSQL() throws SQLException {
