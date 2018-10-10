@@ -19,7 +19,6 @@ public class TestcontainersExtension implements BeforeAllCallback, AfterAllCallb
     private List<Field> findAllContainers(ExtensionContext context) {
         Class<?> clazz = context.getTestClass().get();
         Field[] declaredFields = clazz.getDeclaredFields();
-        System.out.println(declaredFields.length);
         return Arrays.stream(declaredFields).filter(f -> GenericContainer.class.isAssignableFrom(f.getType())).collect(toList());
     }
 
