@@ -35,7 +35,9 @@ dependencies {
     testCompile 'org.seleniumhq.selenium:selenium-remote-driver:3.14.0'
 
     testCompile ("org.testcontainers:postgresql:${testcontainersVersion}")
+    testCompile ("org.testcontainers:mysql:${testcontainersVersion}")
     testCompile 'org.postgresql:postgresql:42.2.5.jre7'
+    testCompile 'mysql:mysql-connector-java:8.0.12'
     testCompile 'com.zaxxer:HikariCP:3.2.0'
 }
 

@@ -78,7 +78,7 @@ class AssertionTest {
     }
 
     @Test
-    @DisplayName("\uD83D\uDE3B\uD83D\uDE3B\uD83D\uDE3B")
+    @DisplayName("\uD83E\uDD14\uD83D\uDE31")
     void testWithEmojisInDisplayName() {
         assertEquals(4, 2 + 2);
     }
