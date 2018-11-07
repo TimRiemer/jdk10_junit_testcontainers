@@ -2,7 +2,7 @@ group 'mobi.riemer'
 version '1.0-SNAPSHOT'
 
 ext.junitJupiterVersion  = '5.3.1'
-ext.testcontainersVersion  = '1.9.1'
+ext.testcontainersVersion  = '1.10.0'
 
 apply plugin: 'java'
 
@@ -30,6 +30,7 @@ dependencies {
     testCompile ("org.junit.vintage:junit-vintage-engine:${junitJupiterVersion}")
 
     testCompile ("org.testcontainers:testcontainers:${testcontainersVersion}")
+    testCompile ("org.testcontainers:junit-jupiter:${testcontainersVersion}")
 
     testCompile ("org.testcontainers:selenium:${testcontainersVersion}")
     testCompile 'org.seleniumhq.selenium:selenium-remote-driver:3.14.0'

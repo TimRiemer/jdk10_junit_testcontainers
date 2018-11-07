@@ -2,19 +2,17 @@ package mobi.riemer;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tag("testcontainers")
-@Testcontainers
-class GenericContainerTest {
+@ExtendWith(TestcontainersExtension.class)
+class GenericContainerTestOwnExtension {
 
-    @Container
     private static GenericContainer wildfly =
             new GenericContainer("jboss/wildfly")
                     .withExposedPorts(8080, 9990);

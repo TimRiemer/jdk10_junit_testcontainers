@@ -15,19 +15,17 @@ import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 @Tag("testcontainers")
-@Testcontainers
+@ExtendWith(TestcontainersExtension.class)
+class WebDriverContainerTestOwnExtension {
 
-class WebDriverContainerTest {
-
-    @Container
     private static BrowserWebDriverContainer chrome = new BrowserWebDriverContainer<>()
             .withDesiredCapabilities(DesiredCapabilities.chrome())
             .withNetwork(Network.SHARED)
             .withNetworkAliases("vnchost")
             .withRecordingMode(BrowserWebDriverContainer.VncRecordingMode.SKIP, null);
 
-    @Container
     private static VncRecordingContainer vnc = new VncRecordingContainer(chrome);
 
     @Test

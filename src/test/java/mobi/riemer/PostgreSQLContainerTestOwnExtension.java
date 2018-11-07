@@ -4,9 +4,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,10 +14,9 @@ import java.sql.Statement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tag("testcontainers")
-@Testcontainers
-class PostgreSQLContainerTest {
+@ExtendWith(TestcontainersExtension.class)
+class PostgreSQLContainerTestOwnExtension {
 
-    @Container
     private static PostgreSQLContainer postgres = new PostgreSQLContainer();
 
     @Test
