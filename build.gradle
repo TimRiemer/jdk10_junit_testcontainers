@@ -1,8 +1,8 @@
 group 'mobi.riemer'
 version '1.0-SNAPSHOT'
 
-ext.junitJupiterVersion  = '5.3.1'
-ext.testcontainersVersion  = '1.10.0'
+ext.junitJupiterVersion  = '5.3.2'
+ext.testcontainersVersion  = '1.10.3'
 
 apply plugin: 'java'
 
@@ -42,8 +42,8 @@ dependencies {
     testCompile 'com.zaxxer:HikariCP:3.2.0'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.10'
+wrapper {
+    gradleVersion = '5.0'
 }
 
 
